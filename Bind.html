@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind Methode</title>
+</head>
+<body>
+    <script>
+        //   ~~~~~ Bind  Method ~~~~~
+
+      let Balak1 = {
+        Name: "Juned Ahmad",
+        Course: "B.Tech",
+        Branch: "Cse",
+        Age: 23,
+        Designation: "Software Devloper",
+      };
+
+      let Balak2 = {
+        Name: "Mo Ali ",
+        Course: "B.Tech",
+        Branch: "Cse",
+        Age: 23,
+      };
+
+      let PrintDeatails = function () {
+        console.log(this);
+      };
+      let newfun =PrintDeatails.bind(Balak1);
+      newfun();
+    </script>
+    
+</body>
+</html>
