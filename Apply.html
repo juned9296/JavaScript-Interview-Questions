@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Methode</title>
+</head>
+<body>
+    <script>
+        //   ~~~~~ Apply Method ~~~~~
+
+         let Candidate = {
+          Name: "Juned Ahmad",
+          Course: "B.Tech",
+          Branch: "Cse",
+          Age: 23,
+          Designation: "Software Devloper",
+        };
+
+        let Candidate2 = {
+          Name: "Mo Ali ",
+          Course: "B.Tech",
+          Branch: "Cse",
+          Age: 23,
+        };
+
+        let PrintDeatails = function (State,Country) {
+          console.log(this.Name + ""+State+" "+Country );
+        };
+        PrintDeatails.apply(Candidate,["Utter Pardesh", "India", ]);
+    </script>
+</body>
+</html>
