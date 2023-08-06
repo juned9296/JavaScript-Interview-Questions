@@ -1,9 +1,9 @@
 
-      // Q1- Explain the Hoisting in JavaScript?
+      /* Q1- Explain the Hoisting in JavaScript?
 
-      // // Ans- Hoisting is the default behaviour of JavaScript
-      // where every varriable and Function() declariation moves
-      // on the top not initialization.
+       Ans- Hoisting is the default behaviour of JavaScript
+       where every varriable and Function() declariation moves
+       on the top not initialization. */
 
       // For Example --
 
