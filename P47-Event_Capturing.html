@@ -1,0 +1,79 @@
+<!--     
+ Q- What is Event Capturing in JavaScript ?
+ Ans. Event Capturing is mechanism in JavaScript for Handling the 
+      propagation of Event in the Dom tree.
+
+ It Start From  outermost  Element and moves up to innermost Element.   -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Capturing</title>
+    <style>
+      .TopDiv {
+        background-color: brown;
+        color: white;
+        padding: 10px;
+      }
+      .MiddleDiv {
+        background-color: green;
+        color: white;
+        padding: 10px;
+      }
+      .InnerDiv {
+        background-color: blueviolet;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.documentElement.addEventListener(
+          "click",
+          function (event) {
+            alert("Root Document Clicked (Capturing Phase)");
+          },
+          true
+        );
+
+        const topDiv = document.querySelector(".TopDiv");
+        topDiv.addEventListener(
+          "click",
+          function (event) {
+            alert("Top Div Called (Capturing Phase)");
+          },
+          true
+        );
+
+        const middleDiv = document.querySelector(".MiddleDiv");
+        middleDiv.addEventListener(
+          "click",
+          function (event) {
+            alert("Middle Div Called (Capturing Phase)");
+          },
+          true
+        );
+
+        const innerDiv = document.querySelector(".InnerDiv");
+        innerDiv.addEventListener(
+          "click",
+          function (event) {
+            alert("Inner Div Called (Capturing Phase)");
+          },
+          true
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <div class="TopDiv">
+      Top Div
+      <div class="MiddleDiv">
+        Middle Div
+        <div class="InnerDiv">Inner Div</div>
+      </div>
+    </div>
+  </body>
+</html>
