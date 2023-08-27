@@ -1,0 +1,67 @@
+<!-- 
+    Q. What is Event Propagation in JavaScript ?
+
+    Ans-Event propagation in JavaScript is how actions like clicks spread through
+        web page parts. They can move upwards to a main container or downwards from 
+        the main container to specific sections, triggering actions attached to them 
+        on the way.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+    <style>
+      .TopDiv {
+        background-color: brown;
+        color: white;
+        padding: 10px;
+      }
+      .MiddleDiv {
+        background-color: green;
+        color: white;
+        padding: 10px;
+      }
+      .InnerDiv {
+        background-color: blueviolet;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const topDiv = document.querySelector(".TopDiv");
+        const middleDiv = document.querySelector(".MiddleDiv");
+        const innerDiv = document.querySelector(".InnerDiv");
+
+        topDiv.addEventListener("click", function (event) {
+          alert("Top Div Called");
+          event.stopPropagation();
+        });
+
+        middleDiv.addEventListener("click", function (event) {
+          alert("Middle Div Called");
+          event.stopPropagation();
+        });
+
+        innerDiv.addEventListener("click", function (event) {
+          alert("Inner Div Called");
+          event.stopPropagation();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="TopDiv">
+      Top Div
+      <div class="MiddleDiv">
+        Middle Div
+        <div class="InnerDiv">
+            Inner Div
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
